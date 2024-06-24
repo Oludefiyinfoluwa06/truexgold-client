@@ -13,9 +13,9 @@ const StayTuned = () => {
         <p>Stay Tuned</p>
 
         <div className="media">
-            <FaTelegram size={30}/>
-            <FaYoutube size={30}/>
-            <FaXTwitter size={30}/>
+            <FaTelegram size={45}/>
+            <FaYoutube size={45}/>
+            <FaXTwitter size={45}/>
         </div>
     </div>
   )
