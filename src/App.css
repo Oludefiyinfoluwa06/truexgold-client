@@ -18,6 +18,8 @@ body {
     padding: 0;
     height: 100vh;
     background: linear-gradient(to bottom, #211D7E, #040112);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     color: white;
     font-family: Arial, sans-serif;

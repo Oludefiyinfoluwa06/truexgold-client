@@ -1,8 +1,10 @@
 import React from 'react';
 import '../assets/styles.css';
+
 import RankButton from './RankButton';
 import ConnectBtn from './ConnectBtn';
 import TapAmount from './TapAmount';
+import Logo from '../assets/img/truexLogo.png';
 
 const Value = () => {
   return (
@@ -12,7 +14,10 @@ const Value = () => {
             <RankButton />
             <ConnectBtn />
           </div>
-          <TapAmount />
+          <div className="Amount">
+            <img src={Logo} alt="Amount" />
+            <TapAmount />
+          </div>
         </div>
     </div>
   )

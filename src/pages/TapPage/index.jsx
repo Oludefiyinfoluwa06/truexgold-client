@@ -2,12 +2,16 @@ import React from 'react';
 // import Nav from '../../components/Nav';
 import './TapPage.css'
 import Value from '../../components/Value';
+import Tap from '../../components/Tap';
+import Nav from '../../components/Nav';
 
 const TapPage = () => {
   return (
     <div className='Container'>
-        {/* <Nav /> */}
         <Value />
+        <Tap />
+        <Nav />
+
     </div>
   )
 }

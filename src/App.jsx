@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import LandingPage from './pages/LandingPage';
-import SplashVid from './pages/SplashVid';
+import SplashVid from './pages/SplashVid/SplashVid';
 import TapPage from './pages/TapPage';
 
 

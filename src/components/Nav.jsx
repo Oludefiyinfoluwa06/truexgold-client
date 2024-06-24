@@ -1,22 +1,61 @@
-import React from 'react';
-import { MdCancel } from "react-icons/md";
-import '../assets/styles.css';
-import { BiAlignMiddle } from "react-icons/bi";
-
-
+import React, { useState } from 'react';
+import '../assets/Nav.css';
+import Ref from '../assets/img/ref.png';
+import Task from '../assets/img/task.png';
+import Tap from '../assets/img/tap.png';
+import Boost from '../assets/img/boost.png';
+import Stats from '../assets/img/stat.png';
 
 const Nav = () => {
+  const [activeTab, setActiveTab] = useState('Ref');
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
-    <div className='wholeNav'>
-            <div className="left">
-                <MdCancel size={30}/>
-                    <h2>TRUEXGOLD</h2>
-            </div>
+    <div className="container">
+      <div 
+        className={`each ${activeTab === 'Ref' ? 'active' : ''}`} 
+        onClick={() => handleTabClick('Ref')}
+      >
+        <img src={Ref} alt="ref" className="ref" />
+        <p>Ref</p>
+      </div>
 
-           
-                <BiAlignMiddle />
+      <div 
+        className={`each ${activeTab === 'Task' ? 'active' : ''}`} 
+        onClick={() => handleTabClick('Task')}
+      >
+        <img src={Task} alt="task" className="ref" />
+        <p>Task</p>
+      </div>
+
+      <div 
+        className={`each ${activeTab === 'Tap' ? 'active' : ''}`} 
+        onClick={() => handleTabClick('Tap')}
+      >
+        <img src={Tap} alt="tap" className="ref" />
+        <p>Tap</p>
+      </div>
+
+      <div 
+        className={`each ${activeTab === 'Boost' ? 'active' : ''}`} 
+        onClick={() => handleTabClick('Boost')}
+      >
+        <img src={Boost} alt="boost" className="ref" />
+        <p>Boost</p>
+      </div>
+
+      <div 
+        className={`each ${activeTab === 'Stats' ? 'active' : ''}`} 
+        onClick={() => handleTabClick('Stats')}
+      >
+        <img src={Stats} alt="stats" className="ref" />
+        <p>Stats</p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
