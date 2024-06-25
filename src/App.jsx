@@ -7,6 +7,7 @@ import TapPage from './pages/TapPage';
 import InviteFriends from './pages/InviteFriends/InviteFriends';
 import EarnCoins from './pages/EarnCoin/EarnCoin';
 import BoosterPage from './pages/BoosterPage/BoosterPage';
+import StatsPage from './pages/StatsPage/StatsPage';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path='/invite' element = {< InviteFriends/>} />
             <Route path='/earn' element = {< EarnCoins/>} />
             <Route path='/boost' element = {<BoosterPage />} />
+            <Route path='/stat' element = {<StatsPage />} />
 
         </Routes>
     </BrowserRouter>

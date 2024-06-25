@@ -48,13 +48,13 @@ const Nav = () => {
         <p>Boost</p>
       </Link>
 
-      <div 
+      <Link to='/stat'
         className={`each ${activeTab === 'Stats' ? 'active' : ''}`} 
         onClick={() => handleTabClick('Stats')}
       >
         <img src={Stats} alt="stats" className="ref" />
         <p>Stats</p>
-      </div>
+      </Link>
     </div>
   );
 };
