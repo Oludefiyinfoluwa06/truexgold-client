@@ -23,6 +23,9 @@ const BoosterPage = () => {
         </div>
         <br />
         <br />
+        <br />
+        <br />
+        <br />
         <div className="line"></div>
 
         <div className="booster">
