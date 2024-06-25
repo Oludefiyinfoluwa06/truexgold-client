@@ -61,4 +61,220 @@
   .NumberofTap p {
     font-size: 26px;
   }
+
+  .Amount img {
+    width: 40px;
+    height: 40px;
+
+  }
+  .points-text {
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
+
+  .energy-display {
+    /* width: 33.33%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    /* max-width: 8rem; */
+  }
+  .energy-display img {
+    width: 40px;
+    height: 40px;
+  }
+  .energy-text {
+    /* margin-left: 0.5rem; */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .app-container {
+    background: linear-gradient(135deg, #1f1f1f, #1c1c22);
+    min-height: 100vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    height: 50%;
+    background: linear-gradient(135deg, #1c1c22, #1f1f1f);
+    z-index: 0;
+  }
+  
+  .overlay-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+  
+  .radial-gradient-overlay {
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-content {
+    width: 100%;
+    z-index: 10;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+  
+  .join-squad {
+    width: 100%;
+    cursor: pointer;
+    background: #1f1f1f;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-radius: 0.75rem;
+  }
+  
+  .points-display {
+    margin-top: 3rem;
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  
+  .trophy-display {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+  }
+  
+  .footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  
+  
+  
+  
+  
+  .energy-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .energy-max {
+    font-size: 1.25rem;
+    opacity: 0.75;
+  }
+  
+  /* .buttons {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    max-width: 15rem;
+    font-size: 0.875rem;
+  } */
+  
+  /* .button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+   */
+  .divider {
+    height: 3rem;
+    width: 0.125rem;
+    background: #fddb6d;
+  }
+  
+  .energy-bar-container {
+    width: 100%;
+    background: #f9c035;
+    border-radius: 9999px;
+    margin-top: 1rem;
+  }
+  
+  .energy-bar {
+    background: linear-gradient(to right, #f3c45a, #fffad0);
+    height: 1rem;
+    border-radius: 9999px;
+  }
+  
+  .clickable-area {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .click-area {
+    position: relative;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  
+  .click-text {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: float 1s ease-out;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  }
   

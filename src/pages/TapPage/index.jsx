@@ -1,6 +1,5 @@
 import React from 'react';
-// import Nav from '../../components/Nav';
-import './TapPage.css'
+import './TapPage.css';
 import Value from '../../components/Value';
 import Tap from '../../components/Tap';
 import Nav from '../../components/Nav';
@@ -11,9 +10,8 @@ const TapPage = () => {
         <Value />
         <Tap />
         <Nav />
-
     </div>
   )
 }
 
-export default TapPage
+export default TapPage;

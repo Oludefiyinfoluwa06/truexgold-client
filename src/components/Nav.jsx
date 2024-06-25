@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/Nav.css';
 import Ref from '../assets/img/ref.png';
 import Task from '../assets/img/task.png';
@@ -15,29 +16,29 @@ const Nav = () => {
 
   return (
     <div className="container">
-      <div 
+      <Link to="/invite"
         className={`each ${activeTab === 'Ref' ? 'active' : ''}`} 
         onClick={() => handleTabClick('Ref')}
       >
         <img src={Ref} alt="ref" className="ref" />
         <p>Ref</p>
-      </div>
+      </Link>
 
-      <div 
+      <Link to='/earn' 
         className={`each ${activeTab === 'Task' ? 'active' : ''}`} 
         onClick={() => handleTabClick('Task')}
       >
         <img src={Task} alt="task" className="ref" />
         <p>Task</p>
-      </div>
+      </Link>
 
-      <div 
+      <Link to='/tap'
         className={`each ${activeTab === 'Tap' ? 'active' : ''}`} 
         onClick={() => handleTabClick('Tap')}
       >
         <img src={Tap} alt="tap" className="ref" />
         <p>Tap</p>
-      </div>
+      </Link>
 
       <div 
         className={`each ${activeTab === 'Boost' ? 'active' : ''}`} 

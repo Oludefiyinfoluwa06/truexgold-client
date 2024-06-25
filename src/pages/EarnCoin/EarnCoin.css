@@ -1,0 +1,145 @@
+.earn-coins {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+  .Amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .AmountandText {
+    display: flex;
+    flex-direction: column;
+  }
+  .task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #2d2d5a;
+    border-radius: 10px; 
+  }
+  .leftTask {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .firstLogo{
+    width: 50px;
+    height: 50px;
+  }
+  .writeUp {
+    display: flex;
+    flex-direction: column;
+    line-height: 5px;
+    /* align-items: center; */
+  }
+  .AmountGiven {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .go {
+    background-color: grey;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  .ref-task {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+
+ 
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .master-button, .connect-wallet {
+    background-color: #2d2d5a;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .coins-count {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .coins-icon {
+    font-size: 30px;
+    margin-right: 10px;
+  }
+  
+  .coins-number {
+    font-size: 24px;
+  }
+  
+  .earn-more-coins {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .task-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  /* .special-task, .ref-tasks {
+    margin-bottom: 10px;
+  }
+  
+  .task-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  */
+  
+  .task-name {
+    font-size: 14px;
+  }
+  
+  .task-reward {
+    font-size: 14px;
+  }
+  
+  .task-action {
+    background-color: #ff9800;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .claim {
+    background-color: #6e6ef9;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2d2d5a;
+    padding: 10px;
+  }
+  
+  .footer-icon {
+    font-size: 14px;
+  }
+  

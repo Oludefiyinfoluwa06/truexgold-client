@@ -14,10 +14,7 @@ const Value = () => {
             <RankButton />
             <ConnectBtn />
           </div>
-          <div className="Amount">
-            <img src={Logo} alt="Amount" />
-            <TapAmount />
-          </div>
+          
         </div>
     </div>
   )

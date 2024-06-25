@@ -1,0 +1,83 @@
+.invite-friends-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin: 20px 0 10px;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  
+  .invite-link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .invite-link-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #38387b;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 350px;
+  }
+  
+  .invite-link-box a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .copy-button {
+    background: #f0a500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .friends-list {
+    background-color: #ffffff1b;
+    height: 500px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  
+ 
+  .copy-button {
+    background: #f0a500;
+    padding: 10px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: flex-end; */
+
+  }
+
+  .nav {
+    position: fixed;
+  }
+  

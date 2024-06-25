@@ -15,6 +15,13 @@ const SplashVid = () => {
     const videoElement = videoRef.current;
     videoElement.addEventListener('ended', handleVideoEnd);
 
+    // Attempt to play the video in case it doesn't start automatically
+    if (videoElement) {
+      videoElement.play().catch((error) => {
+        console.error('Error attempting to play video:', error);
+      });
+    }
+
     return () => {
       videoElement.removeEventListener('ended', handleVideoEnd);
     };
@@ -26,7 +33,7 @@ const SplashVid = () => {
 
   return (
     <div className="video-container" onClick={handleScreenClick}>
-      <video ref={videoRef} className="video" autoPlay>
+      <video ref={videoRef} className="video" autoPlay muted>
         <source src={Video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
