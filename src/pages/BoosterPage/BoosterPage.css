@@ -1,0 +1,119 @@
+.boosters-page {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .connect-wallet-button {
+    display: flex;
+    align-items: center;
+    background-color: #282f66;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  
+  .coin-balance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .coin-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .coin-amount {
+    font-size: 32px;
+    margin-left: 10px;
+  }
+  
+  .daily-boosters {
+    margin-top: 100px;
+  }
+  
+  .booster {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    background-color: #282f66;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+  }
+  .span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .boosters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .booster_points {
+    display: flex;
+    gap: 5px;
+  }
+  .booster-levelnum {
+    color: grey;
+  }
+  .boosting {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #282f66;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px 0;
+  }
+  
+
+  .boosting img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  .booster img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .level {
+    color: #bbbbbb;
+  }
+  
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 50px 0;
+  }
+  
+  .nav-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  

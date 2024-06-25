@@ -53,7 +53,9 @@ const InviteFriends = () => {
 
 
       
-      <Nav />
+      <nav className="bottom-nav">
+            <Nav />
+        </nav>
      
 
       

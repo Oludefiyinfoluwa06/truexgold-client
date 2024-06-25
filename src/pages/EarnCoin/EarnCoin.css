@@ -132,11 +132,14 @@
     background-color: #6e6ef9;
   }
   
-  .footer {
+  .bottom-nav {
     display: flex;
     justify-content: space-around;
-    background-color: #2d2d5a;
-    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 50px 0;
   }
   
   .footer-icon {

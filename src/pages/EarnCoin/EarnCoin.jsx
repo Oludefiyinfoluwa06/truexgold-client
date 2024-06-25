@@ -139,7 +139,10 @@ const EarnCoins = () => {
         {/* <br /> */}
 
 
-      <Nav />
+      
+        <nav className="bottom-nav">
+            <Nav />
+        </nav>
     </div>
   );
 };

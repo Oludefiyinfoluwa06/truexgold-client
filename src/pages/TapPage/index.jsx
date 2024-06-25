@@ -9,7 +9,9 @@ const TapPage = () => {
     <div className='Container'>
         <Value />
         <Tap />
-        <Nav />
+        <nav className="bottom-nav">
+            <Nav />
+        </nav>
     </div>
   )
 }
