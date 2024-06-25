@@ -59,14 +59,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    background-color: #1c1c227a;
-    width: 150px;
+    gap: 5px;
+    /* background-color: #1c1c227a; */
+    /* width: 50px; */
     height: 70px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); */
     transition: opacity 0.3s;
     cursor: pointer;
+}
+.innerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #1c1c227a;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  
 }
 
 .CupBtn.active {
@@ -75,16 +87,16 @@
 }
 
   .CupBtn p {
-    font-size: 15px;
+    font-size: 10px;
   }
 
   .CupBtn img {
-    width: 30px;
-    height: 30px;
+    width: 10px;
+    height: 10px;
    }
    .buttons {
     display: flex;
-    gap: 78px;
+    gap: 50px;
    }
 
   .ConnBtn {
@@ -111,6 +123,10 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
+  }
+  .ValueContainer {
+    display: flex;
+    top: 0;
   }
   .WholeValue h1{
     font-size: 50px;

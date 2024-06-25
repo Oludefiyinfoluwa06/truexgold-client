@@ -1,6 +1,4 @@
-html body {
-    margin: 30px 20px;
-}
+
 .Container {
     display: flex;
     flex-direction: column;

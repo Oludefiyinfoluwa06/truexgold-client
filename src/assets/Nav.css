@@ -2,7 +2,6 @@
   text-decoration: none;
   color: #fff;
 }
-
 img {
   width: 20px;
   height: 20px;
@@ -27,17 +26,17 @@ img {
   align-items: center;
   justify-content: space-between;
   background-color: black;
-  width: 66px;
-  border: 2px solid grey;
+  width: 60px;
+  border: 1px solid grey;
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 0px 20px;
   box-sizing: border-box;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
 
 .each p {
-  font-size: 12px;
+  font-size: 8px;
 }
 
 .ref {
@@ -46,5 +45,5 @@ img {
 }
 
 .active {
-  border: solid #8E7509;
+  border: solid #8E7509 2px;
 }

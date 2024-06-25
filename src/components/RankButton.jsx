@@ -6,11 +6,11 @@ import { FaGreaterThan } from "react-icons/fa";
 
 const RankButton = () => {
   return (
-    <div>
-        <a className='CupBtn'>
+    <div className='CupBtn'>
+        <a className='innerBtn'>
             <img src={Cup} alt="cup" />
             <p>Master</p>
-            <FaGreaterThan />
+            <FaGreaterThan size={6} />
         </a>
     </div>
   )

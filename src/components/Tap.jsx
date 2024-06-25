@@ -49,8 +49,6 @@ const Tap = () => {
           <img src={Logo} alt="Amount" />
           <span className="points-text">{points.toLocaleString()}</span>
         </div>
-          <br />
-          <br />
         <div className="clickable-area">
           <div className="click-area" onClick={handleClick}>
             <img src={Logo} width={256} height={256} alt="notcoin" />
@@ -74,7 +72,7 @@ const Tap = () => {
 
       {/* Progress Bar */}
       <div className="ProgressBar">
-        <div className="empty"><br /><br /></div>
+        <div className="empty"></div>
         {/* <div className="progress"></div> */}
 
         <div className="energy-bar-container">
