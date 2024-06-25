@@ -13,7 +13,7 @@ const LandingPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/tap');
-    }, 5000);
+    }, 50000000000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
