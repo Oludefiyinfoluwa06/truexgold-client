@@ -49,50 +49,51 @@ const Tap = () => {
           <img src={Logo} alt="Amount" />
           <span className="points-text">{points.toLocaleString()}</span>
         </div>
-        <div className="clickable-area">
-          <div className="click-area" onClick={handleClick}>
-            <img src={Logo} width={256} height={256} alt="notcoin" />
-            {clicks.map((click) => (
-              <div
-                key={click.id}
-                className="click-text"
-                style={{
-                  top: `${click.y - 42}px`,
-                  left: `${click.x - 28}px`,
-                  animation: `float 1s ease-out`
-                }}
-                onAnimationEnd={() => handleAnimationEnd(click.id)}
-              >
-                12
+
+        <div className="middle">
+            <div className="clickable-area">
+              <div className="click-area" onClick={handleClick}>
+                <img src={Logo} width={256} height={256} alt="notcoin" />
+                {clicks.map((click) => (
+                  <div
+                    key={click.id}
+                    className="click-text"
+                    style={{
+                      top: `${click.y - 42}px`,
+                      left: `${click.x - 28}px`,
+                      animation: `float 1s ease-out`
+                    }}
+                    onAnimationEnd={() => handleAnimationEnd(click.id)}
+                  >
+                    12
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          {/* <img src={Logo} alt="Truex Logo" /> */}
+
+          {/* Progress Bar */}
+          <div className="ProgressBar">
+            <div className="empty"></div>
+            {/* <div className="progress"></div> */}
+
+            <div className="energy-bar-container">
+              <div className="energy-bar" style={{ width: `${(energy / 6500) * 100}%` }}></div>
+            </div>
+
+            {/* <div className="NumberofTap">
+              <img src={Thunder} alt="" />
+              <p>100 / 100</p>
+            </div> */}
+
+            <div className="energy-display">
+              <img src={Thunder} width={44} height={44} alt="High Voltage" />
+              <div className="energy-text">
+                <span className="energy-amount">{energy}</span>
+                <span className="energy-max">/ 6500</span>
+              </div>
+            </div> 
           </div>
-        </div>
-      {/* <img src={Logo} alt="Truex Logo" /> */}
-
-      {/* Progress Bar */}
-      <div className="ProgressBar">
-        <div className="empty"></div>
-        {/* <div className="progress"></div> */}
-
-        <div className="energy-bar-container">
-          <div className="energy-bar" style={{ width: `${(energy / 6500) * 100}%` }}></div>
-        </div>
-
-        {/* <div className="NumberofTap">
-          <img src={Thunder} alt="" />
-          <p>100 / 100</p>
-        </div> */}
-
-        <div className="energy-display">
-          <img src={Thunder} width={44} height={44} alt="High Voltage" />
-          <div className="energy-text">
-            <span className="energy-amount">{energy}</span>
-            <span className="energy-max">/ 6500</span>
-          </div>
-          </div>
-
-        
       </div>
 
 

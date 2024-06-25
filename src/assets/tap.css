@@ -273,6 +273,10 @@
     margin-top: 1rem;
     cursor: pointer;
   }
+  .click-area img {
+    width: 150px;
+    height: 150px;
+  }
   
   .click-text {
     position: absolute;
@@ -291,5 +295,14 @@
       transform: translateY(-50px);
       opacity: 0;
     }
+  }
+
+  .middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
   }
   
