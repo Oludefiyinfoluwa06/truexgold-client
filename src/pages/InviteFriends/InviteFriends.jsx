@@ -50,8 +50,11 @@ const InviteFriends = () => {
         <p>List of My Friends:</p>
         {/* Add your friends list here */}
       </div>
-
-
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       
       <nav className="bottom-nav">
             <Nav />

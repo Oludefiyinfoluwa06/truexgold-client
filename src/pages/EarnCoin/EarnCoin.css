@@ -113,6 +113,8 @@
   }
   
   */
+
+
   
   .task-name {
     font-size: 14px;
@@ -144,5 +146,57 @@
   
   .footer-icon {
     font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    .earn-coins {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      outline: none;
+    }
+    a:focus {
+      outline: none;
+    }
+    .special-task {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .task-section {
+      font-size: 11px;
+    }
+    .task {
+      font-size: 10px;
+      font-weight: bold;
+      height: 60px;
+    }
+    .writeUp {
+      line-height: 0.1;
+    }
+    .writeUp img {
+      width: 10px;
+      height: 10px;
+    }
+    .writeUp p {
+      font-size: 10px;
+    }
+    .go {
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .ref-task {
+      line-height: 0.1;
+
+    }
+   .bottom-nav {
+    position: fixed;
+   }
   }
   

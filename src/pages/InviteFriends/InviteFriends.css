@@ -33,17 +33,19 @@
   
   .invite-link-box {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 10px;
     background: #38387b;
     padding: 10px 20px;
     border-radius: 10px;
     margin-top: 10px;
-    width: 350px;
+    width: 315px;
   }
   
   .invite-link-box a {
     color: white;
+    font-size: 12px;
     text-decoration: none;
   }
   

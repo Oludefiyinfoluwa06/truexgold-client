@@ -10,7 +10,7 @@ const RankButton = () => {
         <a className='innerBtn'>
             <img src={Cup} alt="cup" />
             <p>Master</p>
-            <FaGreaterThan size={6} />
+            <FaGreaterThan size={10} />
         </a>
     </div>
   )

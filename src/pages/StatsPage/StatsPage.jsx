@@ -1,54 +1,52 @@
 import React from 'react';
 import './StatsPage.css';
-import coinIcon from '../../assets/img/truexLogo.png';
-import Nav from '../../components/Nav';
+import Nav from '../../components/Nav'
+import Logo from '../../assets/img/truexLogo.png';
+
 const StatsPage = () => {
   return (
-    <div className="stats-page">
-        <div className="header">
-            <div className="coin-balance">
-            <span className="coin-label">Total Share Balance</span>
-                <div className="balance">
-                    <img src={coinIcon} alt="Coins" className="coin-icon" />
-                    <h2 className="coin-amount">40.762 M</h2>
-                </div> 
+    <div className='Container'>
+        <div className="total-balance">
+            <p>Total shared balance</p>
+            <div className="logo">
+                <img src={Logo} alt="logo" />
+                <p>40.00M</p>
             </div>
-            <div className="line"></div>
+        </div>
+        <div className="line"></div>
+
+        <div className="boxes">
+            <div className="largeBox">
+                <p>Total Player</p>
+                <span className='amount'>5 000 000</span>
+            </div>
         </div>
 
-
-
-
-        <section className="stats-section">
-            <div className="stat-boxes">
-                <span className="stat-label">Total Players</span>
-                <span className="stat-value">55 899 372</span>
+        <div className="centerBoxes">
+            <div className="smallBox">
+                <p>Daily Users</p>
+                <span className='smallTextAmount'>20 000</span>
             </div>
 
-            <div className="center-stat">
-                <div className="stat-content">
-                    <span>Daily Users</span>
-                    <span className='stat-figure'>12 475 372</span>
-                </div>
-                <div className="stat-content">
-                    <span>Daily Users</span>
-                    <span className='stat-figure'>12 475 372</span>
-                </div>
+            <div className="smallBox">
+                <p>Online Users</p>
+                <span className='smallTextAmount'>20 000</span>
             </div>
+        </div>
 
-            <div className="stat-boxes">
-                <span className="stat-label">Total Players</span>
-                <span className="stat-value">55 899 372</span>
+        <div className="boxes">
+            <div className="largeBox">
+                <p>Total Player</p>
+                <span className='amount'>5 000 000</span>
             </div>
-        </section>
-      
+        </div>
 
+        <nav className="bottom-nav">
+        	<Nav />
+      	</nav>
 
-    <nav className="bottom-nav">
-        <Nav />
-    </nav>
     </div>
-  );
-};
+  )
+}
 
-export default StatsPage;
+export default StatsPage

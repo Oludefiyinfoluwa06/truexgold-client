@@ -54,7 +54,8 @@ const EarnCoins = () => {
       
         <div className="task-section">
             <div className="special-task">
-            <h3 className="task-title">Special Task:</h3>
+                <h3 className="task-title">Special Task:</h3>
+                {/* <h2>hello</h2> */}
                 <div className="task">
                     <div className="leftTask">
                         <img src={Special} alt="specialLogo" className='firstLogo'/>
@@ -68,11 +69,12 @@ const EarnCoins = () => {
                     </div>
                     <a href="https://twitter.com" className='go'>Go</a>
 
-                </div>
+            </div>
         </div>
         <br />
 
         <div className="ref-task">
+        <br />
             <h3 className="task-title">Refferal Task:</h3>
             <div className="task">
                 <div className="leftTask">
@@ -135,6 +137,11 @@ const EarnCoins = () => {
             
         </div>
 
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         {/* <br /> */}
 

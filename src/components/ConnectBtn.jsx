@@ -13,12 +13,12 @@ const ConnectBtn = () => {
     //       <p>Connect</p>
     //     </a>
     // </div>
-    <div className='CupBtn'>
-        <a className='innerBtn'>
-            <FaWallet size={6} />
-            <p>Master</p>
-        </a>
-    </div>
+    <span className='CupBtn'>
+        <button className='innerBtn'>
+            <FaWallet size={10} />
+            <p>Wallet</p>
+        </button>
+    </span>
   )
 }
 
