@@ -1,42 +1,18 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SplashVid.css';
-import Video from '../../assets/img/trueX.mp4';
+import Gif from '../../assets/img/trueX.gif'; // Make sure to replace with the correct path to your gif
 
 const SplashVid = () => {
-  const videoRef = useRef(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleVideoEnd = () => {
-      navigate('/landing');
-    };
-
-    const videoElement = videoRef.current;
-    videoElement.addEventListener('ended', handleVideoEnd);
-
-    // Attempt to play the video in case it doesn't start automatically
-    if (videoElement) {
-      videoElement.play().catch((error) => {
-        console.error('Error attempting to play video:', error);
-      });
-    }
-
-    return () => {
-      videoElement.removeEventListener('ended', handleVideoEnd);
-    };
-  }, [navigate]);
 
   const handleScreenClick = () => {
     navigate('/landing');
   };
 
   return (
-    <div className="video-container" onClick={handleScreenClick}>
-      <video ref={videoRef} className="video" autoPlay muted>
-        <source src={Video} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <div className="gif-container" onClick={handleScreenClick}>
+      <img src={Gif} className="gif" alt="Splash GIF" />
     </div>
   );
 };
