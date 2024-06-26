@@ -1,19 +1,22 @@
-
 .Container {
     display: flex;
     flex-direction: column;
     gap: 87px;
     justify-content: center;
     align-items: center;
-}
-
-.bottom-nav {
-    display: flex;
-    justify-content: space-around;
+    /* min-height: 100vh; */
+    padding-bottom: 0px;
+    box-sizing: border-box;
+  }
+  
+  
+  .bottom-nav {
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     right: 0;
-    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
   }
-
+  

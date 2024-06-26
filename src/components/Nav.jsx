@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import '../assets/Nav.css';
 import Ref from '../assets/img/ref.png';
 import Task from '../assets/img/task.png';
@@ -8,53 +8,47 @@ import Boost from '../assets/img/boost.png';
 import Stats from '../assets/img/stat.png';
 
 const Nav = () => {
-  const [activeTab, setActiveTab] = useState('Ref');
-
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
-
   return (
-    <div className="container">
-      <Link to="/invite"
-        className={`each ${activeTab === 'Ref' ? 'active' : ''}`} 
-        onClick={() => handleTabClick('Ref')}
+    <div className="nav-container">
+      <NavLink
+        to="/invite"
+        className={({ isActive }) => (isActive ? 'each active' : 'each')}
       >
         <img src={Ref} alt="ref" className="ref" />
         <p>Ref</p>
-      </Link>
+      </NavLink>
 
-      <Link to='/earn' 
-        className={`each ${activeTab === 'Task' ? 'active' : ''}`} 
-        onClick={() => handleTabClick('Task')}
+      <NavLink
+        to="/earn"
+        className={({ isActive }) => (isActive ? 'each active' : 'each')}
       >
         <img src={Task} alt="task" className="ref" />
         <p>Task</p>
-      </Link>
+      </NavLink>
 
-      <Link to='/tap'
-        className={`each ${activeTab === 'Tap' ? 'active' : ''}`} 
-        onClick={() => handleTabClick('Tap')}
+      <NavLink
+        to="/tap"
+        className={({ isActive }) => (isActive ? 'each active' : 'each')}
       >
         <img src={Tap} alt="tap" className="ref" />
         <p>Tap</p>
-      </Link>
+      </NavLink>
 
-      <Link to='/boost' 
-        className={`each ${activeTab === 'Boost' ? 'active' : ''}`} 
-        onClick={() => handleTabClick('Boost')}
+      <NavLink
+        to="/boost"
+        className={({ isActive }) => (isActive ? 'each active' : 'each')}
       >
         <img src={Boost} alt="boost" className="ref" />
         <p>Boost</p>
-      </Link>
+      </NavLink>
 
-      <Link to='/stat'
-        className={`each ${activeTab === 'Stats' ? 'active' : ''}`} 
-        onClick={() => handleTabClick('Stats')}
+      <NavLink
+        to="/stat"
+        className={({ isActive }) => (isActive ? 'each active' : 'each')}
       >
         <img src={Stats} alt="stats" className="ref" />
         <p>Stats</p>
-      </Link>
+      </NavLink>
     </div>
   );
 };

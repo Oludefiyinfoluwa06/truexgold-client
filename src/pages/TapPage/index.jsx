@@ -7,11 +7,11 @@ import Nav from '../../components/Nav';
 const TapPage = () => {
   return (
     <div className='Container'>
-        <Value />
-        <Tap />
-        <nav className="bottom-nav">
-            <Nav />
-        </nav>
+      <Value />
+      <Tap />
+      <nav className="bottom-nav">
+        <Nav />
+      </nav>
     </div>
   )
 }
