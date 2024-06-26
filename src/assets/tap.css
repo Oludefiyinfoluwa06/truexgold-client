@@ -262,11 +262,15 @@
   
   .clickable-area {
     flex-grow: 1;
-  ;
     display: flex;
     align-items: center;
+    outline: none;
     /* justify-content: center; */
   }
+  .clickable-area:focus {
+    outline: none;
+  }
+
   
   .click-area {
     position: relative;
