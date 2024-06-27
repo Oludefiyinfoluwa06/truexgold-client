@@ -32,7 +32,7 @@ const InviteFriends = () => {
   }, [user, getUserData]);
 
   const handleCopyLink = () => {
-    const inviteLink = `http://localhost:5173/register?referrer=${userData._id}`;
+    const inviteLink = `https://t.me/TruexgoldBot/miners/register?referrer=${userData._id}`;
 
     // Create a temporary textarea element to facilitate copying
     const textarea = document.createElement('textarea');
@@ -61,8 +61,8 @@ const InviteFriends = () => {
       <div className="invite-link-container">
         <p>My invite link:</p>
         <div className="invite-link-box">
-          <Link to={`http://localhost:5173/register?referrer=${userData._id}`} target="_blank" rel="noopener noreferrer">
-            {`http://localhost:5173/register?referrer=${userData._id}`}
+          <Link to={`https://t.me/TruexgoldBot/miners/register?referrer=${userData._id}`} target="_blank" rel="noopener noreferrer">
+            {`https://t.me/TruexgoldBot/miners/register?referrer=${userData._id}`}
           </Link>
           <button className="copy-button" onClick={handleCopyLink}>{copyButtonText}</button>
         </div>
