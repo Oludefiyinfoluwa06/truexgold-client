@@ -16,7 +16,7 @@ export const TruexProvider = ({ children }) => {
     const registerUser = async (username, referrer) => {
         setLoading(true);
         try {
-            const response = await axios.post(`http://localhost:5000/api/users/register`, { username, referrer });
+            const response = await axios.post(`https://truex-backend.vercel.app/api/users/register`, { username, referrer });
             localStorage.setItem('user', JSON.stringify(response.data.user));
             setUser(response.data.user);
             navigate('/tap');
@@ -31,7 +31,7 @@ export const TruexProvider = ({ children }) => {
     const getUserData = async (userId) => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:5000/api/users/${userId}`);
+            const response = await axios.get(`https://truex-backend.vercel.app/api/users/${userId}`);
             setUser(response.data.user);
             return response.data;
         } catch (err) {
@@ -44,7 +44,7 @@ export const TruexProvider = ({ children }) => {
     const tapToEarn = async (userId, coinsEarned) => {
         setLoading(true);
         try {
-            const response = await axios.post(`http://localhost:5000/api/users/earnCoins`, { userId, coinsEarned });
+            const response = await axios.post(`https://truex-backend.vercel.app/api/users/earnCoins`, { userId, coinsEarned });
             setUser(response.data.user);
             return response.data;
         } catch (err) {
@@ -57,7 +57,7 @@ export const TruexProvider = ({ children }) => {
     const updateCoins = async (userId, newCoins) => {
         setLoading(true);
         try {
-            const response = await axios.put(`http://localhost:5000/api/users/updateCoins`, { userId, newCoins });
+            const response = await axios.put(`https://truex-backend.vercel.app/api/users/updateCoins`, { userId, newCoins });
             setUser(response.data.user);
             return response.data;
         } catch (err) {
@@ -71,7 +71,7 @@ export const TruexProvider = ({ children }) => {
         setLoading(true);
 
         try {
-            const response = await axios.get(`http://localhost:5000/api/tasks/`);
+            const response = await axios.get(`https://truex-backend.vercel.app/api/tasks/`);
             setTasks(response.data.tasks);
         } catch (err) {
             console.log(err);
@@ -84,7 +84,7 @@ export const TruexProvider = ({ children }) => {
     const completeTask = async (userId, taskId) => {
         setLoading(true);
         try {
-            const response = await axios.post(`http://localhost:5000/api/tasks/complete`, { userId, taskId });
+            const response = await axios.post(`https://truex-backend.vercel.app/api/tasks/complete`, { userId, taskId });
             setUser(response.data.user);
             return response.data;
         } catch (err) {
@@ -98,7 +98,7 @@ export const TruexProvider = ({ children }) => {
         setLoading(true);
 
         try {
-            const response = await axios.post(`http://localhost:5000/api/tasks/checkCompletion`, { userId, taskId });
+            const response = await axios.post(`https://truex-backend.vercel.app/api/tasks/checkCompletion`, { userId, taskId });
             setUser(response.data.user);
             return response.data;
         } catch (err) {
@@ -123,7 +123,7 @@ export const TruexProvider = ({ children }) => {
 
     const getGlobalEarningLimit = async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/setting/globalEarningLimit`);
+            const response = await axios.get(`https://truex-backend.vercel.app/api/setting/globalEarningLimit`);
             setGlobalEarningLimit(response.data.globalEarningLimit);
         } catch (err) {
             console.error('Error fetching global earning limit:', err);
