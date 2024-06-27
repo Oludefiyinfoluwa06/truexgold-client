@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SplashVid.css';
-import Gif from '../../assets/img/trueX.gif'; // Make sure to replace with the correct path to your gif
+import Gif from '../../assets/img/trueX.gif'; 
 
 const SplashVid = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/landing');
+    }, 12000); 
+
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
   const handleScreenClick = () => {
+    
     navigate('/landing');
   };
 
