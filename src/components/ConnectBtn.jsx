@@ -1,25 +1,92 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../assets/styles.css';
+import Logo from '../assets/img/truexLogo.png';
 import { FaWallet } from "react-icons/fa6";
+import { createWeb3Modal, useWeb3Modal } from '@web3modal/wagmi/react';
+import { defaultWagmiConfig } from '@web3modal/wagmi/react/config';
 
+import { WagmiProvider, useAccount, useDisconnect } from 'wagmi';
+import { arbitrum, mainnet } from 'wagmi/chains';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+// 0. Setup queryClient
+const queryClient = new QueryClient();
 
+// 1. Get projectId from https://cloud.walletconnect.com
+const projectId = 'a629f86d61ae80ae64fab0196c035ac2';
 
-const ConnectBtn = () => {
+// 2. Create wagmiConfig
+const metadata = {
+  name: 'TON',
+  description: 'Truexgold mining',
+  url: 'https://truexgold.vercel.app/', // origin must match your domain & subdomain
+  icons: [Logo]
+};
+
+const chains = [mainnet, arbitrum];
+const config = defaultWagmiConfig({
+  chains,
+  projectId,
+  metadata,
+});
+
+// 3. Create modal
+createWeb3Modal({
+  wagmiConfig: config,
+  projectId,
+  enableAnalytics: true, // Optional - defaults to your Cloud configuration
+  enableOnramp: true // Optional - false as default
+});
+
+export function Web3ModalProvider({ children }) {
   return (
-    // <div>
-    //     <a className='ConnBtn'>
-    //       <FaWallet />
-    //       <p>Connect</p>
-    //     </a>
-    // </div>
-    <span className='CupBtn'>
-        <button className='innerBtn'>
-            <FaWallet size={10} />
-            <p>Wallet</p>
-        </button>
-    </span>
-  )
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        {children}
+      </QueryClientProvider>
+    </WagmiProvider>
+  );
 }
 
-export default ConnectBtn
+export default function ConnectButton() {
+  const { open } = useWeb3Modal();
+  const { address, isConnected } = useAccount();
+  const { disconnect } = useDisconnect();
+  const [walletAddress, setWalletAddress] = useState('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    if (isConnected && address) {
+      setWalletAddress(address.slice(0, 6));
+    } else {
+      setWalletAddress('');
+    }
+  }, [isConnected, address]);
+
+  const handleDisconnect = () => {
+    disconnect();
+    setIsDropdownOpen(false);
+  };
+
+  const handleButtonClick = () => {
+    if (isConnected) {
+      setIsDropdownOpen(!isDropdownOpen);
+    } else {
+      open({ view: 'Networks' });
+    }
+  };
+
+  return (
+    <span className='CupBtn'>
+      <button className='innerBtn' onClick={handleButtonClick}>
+        <FaWallet size={10} />
+        <p>{walletAddress ? walletAddress + '....' : 'Wallet'}</p>
+      </button>
+      {isDropdownOpen && (
+        <div className='dropdownMenu'>
+          <button onClick={handleDisconnect}>Disconnect</button>
+        </div>
+      )}
+    </span>
+  );
+}
