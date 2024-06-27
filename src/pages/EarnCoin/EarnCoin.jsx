@@ -4,7 +4,7 @@ import Logo from '../../assets/img/truexLogo.png';
 import Nav from '../../components/Nav';
 import Value from '../../components/Value';
 import Special from '../../assets/img/special.png';
-import Invite from '../../assets/img/friendinvite.png';
+// import Invite from '../../assets/img/friendinvite.png';
 import { useTruex } from '../../contexts/useTruex';
 
 const EarnCoins = () => {
@@ -96,7 +96,12 @@ const EarnCoins = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button onClick={async () => await completeTask(userData._id, task._id)}>Go</button>
+                                <button 
+                                    onClick={async () => await completeTask(userData._id, task._id)} 
+                                    disabled={user?.completedTasks.includes(task._id)}
+                                >
+                                    {user?.completedTasks.includes(task._id) ? 'Completed' : 'Go'}
+                                </button>
                             </div>
                         ))}
                     </div>
@@ -107,7 +112,7 @@ const EarnCoins = () => {
 
         <br />
 
-        <div className="ref-task">
+        {/* <div className="ref-task">
         <br />
             <h3 className="task-title">Refferal Task:</h3>
             <div className="task">
@@ -166,7 +171,7 @@ const EarnCoins = () => {
                 <a href="https://twitter.com" className='go'>Claim</a>
             </div>
 
-        </div>
+        </div> */}
             
             
         </div>
