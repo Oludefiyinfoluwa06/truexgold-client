@@ -12,7 +12,12 @@ const Tap = ({ points, setPoints }) => {
   const pointsToAdd = 1;
   const energyToReduce = 1;
 
-  const { tapToEarn, updateCoins } = useTruex();
+  const { tapToEarn, updateCoins, user } = useTruex();
+  useEffect(() => {
+    if (user) {
+      setPoints(user.totalCoins);
+    }
+  }, [user]);
 
   const handleClick = async (e) => {
     if (energy - energyToReduce < 0) {
@@ -25,7 +30,6 @@ const Tap = ({ points, setPoints }) => {
     await tapToEarn(userData._id, (points + pointsToAdd));
     await updateCoins(userData._id, (points + pointsToAdd));
 
-    setPoints(points + pointsToAdd);
     setEnergy(energy - energyToReduce < 0 ? 0 : energy - energyToReduce);
     setClicks([...clicks, { id: Date.now(), x, y }]);
   };
