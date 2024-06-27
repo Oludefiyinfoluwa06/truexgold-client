@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 import CoinLogo from '../../components/CoinLogo';
@@ -11,8 +11,14 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('username'));
+
     const timer = setTimeout(() => {
-      navigate('/tap');
+      if (user) {
+        navigate('/tap');
+      } else {
+        navigate('/register');
+      }
     }, 5000);
 
     return () => clearTimeout(timer);

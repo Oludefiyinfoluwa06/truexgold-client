@@ -1,26 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Logo from '../assets/img/truexLogo.png';
 import '../assets/tap.css';
 import Thunder from '../assets/img/light.png';
+import { useTruex } from '../contexts/useTruex';
 // import TapAmount from './TapAmount';
 
-
-const Tap = () => {
-
-
-  const [points, setPoints] = useState(29857775);
+const Tap = ({ points, setPoints }) => {
   const [energy, setEnergy] = useState(2532);
   const [clicks, setClicks] = useState([]);
-  const pointsToAdd = 12;
-  const energyToReduce = 12;
+  const userData = JSON.parse(localStorage.getItem('user'));
+  const pointsToAdd = 1;
+  const energyToReduce = 1;
 
-  const handleClick = (e) => {
+  const { tapToEarn, updateCoins } = useTruex();
+
+  const handleClick = async (e) => {
     if (energy - energyToReduce < 0) {
       return;
     }
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
+
+    await tapToEarn(userData._id, (points + pointsToAdd));
+    await updateCoins(userData._id, (points + pointsToAdd));
 
     setPoints(points + pointsToAdd);
     setEnergy(energy - energyToReduce < 0 ? 0 : energy - energyToReduce);
@@ -38,9 +41,6 @@ const Tap = () => {
 
     return () => clearInterval(interval); // Clear interval on component unmount
   }, []);
-
-
-
 
   return (
     <div className='tapPage'>
@@ -65,7 +65,7 @@ const Tap = () => {
                     }}
                     onAnimationEnd={() => handleAnimationEnd(click.id)}
                   >
-                    12
+                    +1
                   </div>
                 ))}
               </div>
