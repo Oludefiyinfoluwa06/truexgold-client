@@ -10,6 +10,7 @@ import StatsPage from './pages/StatsPage/StatsPage';
 import { TruexProvider } from './contexts/TruexContext';
 import Register from './pages/Register';
 import { Web3ModalProvider } from './components/ConnectBtn';
+import RankPage from './pages/RankPage/RankPage';
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
             <Route path='/earn' element={< EarnCoins />} />
             <Route path='/boost' element={<BoosterPage />} />
             <Route path='/stat' element={<StatsPage />} />
+            <Route path='/rank' element = {< RankPage />} />
           </Routes>
         </TruexProvider>
       </Web3ModalProvider>

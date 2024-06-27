@@ -1,0 +1,41 @@
+@media (max-width: 480px) {
+    .Rank-Container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin: 0 10px;
+    
+    }
+    .Rank-Container h1 {
+        font-weight: bold;
+    }
+    .rankContent {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 10px;
+        background: #0000004a;   
+        margin-top: -5px;
+    }
+    .content {
+        width: 100%;
+        line-height: 0.1;
+    }
+    .coin {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .writing {
+        line-height: 0.2;
+    }
+    .writing p {
+        font-size: 0.8rem;
+    }
+
+}
