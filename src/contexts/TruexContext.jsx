@@ -86,7 +86,8 @@ export const TruexProvider = ({ children }) => {
         try {
             const response = await axios.post(`https://truex-backend.vercel.app/api/tasks/complete`, { userId, taskId });
             setUser(response.data.user);
-            return response.data;
+            localStorage.removeItem('user');
+            localStorage.setItem('user', JSON.stringify(response.data.user));
         } catch (err) {
             setError(err.response?.data?.message || 'Task completion failed');
         } finally {
