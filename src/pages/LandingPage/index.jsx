@@ -11,7 +11,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('username'));
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const timer = setTimeout(() => {
       if (user) {
