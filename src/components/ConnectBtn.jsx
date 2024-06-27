@@ -1,61 +1,92 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../assets/styles.css';
-import Logo from '../assets/img/truexLogo.png'
+import Logo from '../assets/img/truexLogo.png';
 import { FaWallet } from "react-icons/fa6";
-import { createWeb3Modal, useWeb3Modal, defaultConfig } from '@web3modal/ethers/react';
+import { createWeb3Modal, useWeb3Modal } from '@web3modal/wagmi/react';
+import { defaultWagmiConfig } from '@web3modal/wagmi/react/config';
 
-// 1. Get projectId
-const projectId = 'a629f86d61ae80ae64fab0196c035ac2'
+import { WagmiProvider, useAccount, useDisconnect } from 'wagmi';
+import { arbitrum, mainnet } from 'wagmi/chains';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-// 2. Set chains
-const mainnet = {
-  chainId: 1,
-  name: 'TON',
-  currency: 'TON',
-  explorerUrl: 'https://etherscan.io',
-  rpcUrl: 'https://cloudflare-eth.com'
-}
+// 0. Setup queryClient
+const queryClient = new QueryClient();
 
-// 3. Create a metadata object
+// 1. Get projectId from https://cloud.walletconnect.com
+const projectId = 'a629f86d61ae80ae64fab0196c035ac2';
+
+// 2. Create wagmiConfig
 const metadata = {
-  name: 'truexgold',
-  description: 'Telegram mining bot',
+  name: 'TON',
+  description: 'Truexgold mining',
   url: 'https://truexgold.vercel.app/', // origin must match your domain & subdomain
-  icons: [<Logo />]
-}
+  icons: [Logo]
+};
 
-// 4. Create Ethers config
-const ethersConfig = defaultConfig({
-  /*Required*/
-  metadata,
-
-  /*Optional*/
-  enableEIP6963: true, // true by default
-  enableInjected: true, // true by default
-  enableCoinbase: true, // true by default
-  rpcUrl: '...', // used for the Coinbase SDK
-  defaultChainId: 1 // used for the Coinbase SDK
-})
-
-// 5. Create a Web3Modal instance
-createWeb3Modal({
-  ethersConfig,
-  chains: [mainnet],
+const chains = [mainnet, arbitrum];
+const config = defaultWagmiConfig({
+  chains,
   projectId,
-  enableAnalytics: true // Optional - defaults to your Cloud configuration
-})
+  metadata,
+});
 
+// 3. Create modal
+createWeb3Modal({
+  wagmiConfig: config,
+  projectId,
+  enableAnalytics: true, // Optional - defaults to your Cloud configuration
+  enableOnramp: true // Optional - false as default
+});
 
+export function Web3ModalProvider({ children }) {
+  return (
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        {children}
+      </QueryClientProvider>
+    </WagmiProvider>
+  );
+}
 
 export default function ConnectButton() {
-  const { open } = useWeb3Modal()
+  const { open } = useWeb3Modal();
+  const { address, isConnected } = useAccount();
+  const { disconnect } = useDisconnect();
+  const [walletAddress, setWalletAddress] = useState('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    if (isConnected && address) {
+      setWalletAddress(address.slice(0, 6));
+    } else {
+      setWalletAddress('');
+    }
+  }, [isConnected, address]);
+
+  const handleDisconnect = () => {
+    disconnect();
+    setIsDropdownOpen(false);
+  };
+
+  const handleButtonClick = () => {
+    if (isConnected) {
+      setIsDropdownOpen(!isDropdownOpen);
+    } else {
+      open({ view: 'Networks' });
+    }
+  };
+
   return (
-    
     <span className='CupBtn'>
-        <button className='innerBtn' onClick={() => open({ view: 'Networks' })}>
-            <FaWallet size={10} />
-            <p>Wallet</p>
-        </button>
+      <button className='innerBtn' onClick={handleButtonClick}>
+        <FaWallet size={10} />
+        <p>{walletAddress ? walletAddress + '....' : 'Wallet'}</p>
+      </button>
+      {isDropdownOpen && (
+        <div className='dropdownMenu'>
+          <button onClick={handleDisconnect}>Disconnect</button>
+        </div>
+      )}
     </span>
-  )
+  );
 }
