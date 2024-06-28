@@ -1,4 +1,3 @@
-import React from 'react';
 import './RankPage.css';
 import Cup from '../../assets/img/cup.png';
 import Coin from '../../assets/img/truexLogo.png';
