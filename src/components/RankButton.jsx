@@ -1,4 +1,3 @@
-import React from 'react';
 import '../assets/styles.css';
 import Cup from '../assets/img/cup.png';
 import { FaGreaterThan } from "react-icons/fa";

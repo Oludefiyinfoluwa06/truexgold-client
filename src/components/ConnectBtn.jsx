@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import '../assets/styles.css';
 import Logo from '../assets/img/truexLogo.png';
 import { FaWallet } from "react-icons/fa6";
@@ -19,7 +19,7 @@ const projectId = 'a629f86d61ae80ae64fab0196c035ac2';
 const metadata = {
   name: 'TON',
   description: 'Truexgold mining',
-  url: 'https://truexgold.vercel.app/', // origin must match your domain & subdomain
+  url: 'https://truexgold-users.vercel.app/', // origin must match your domain & subdomain
   icons: [Logo]
 };
 

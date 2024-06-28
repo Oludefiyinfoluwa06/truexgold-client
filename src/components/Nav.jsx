@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../assets/Nav.css';
 import Ref from '../assets/img/ref.png';

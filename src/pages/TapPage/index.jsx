@@ -23,7 +23,7 @@ const TapPage = () => {
     if (user) {
       setPoints(user.totalCoins);
     }
-  }, [user]);
+  }, []);
   
   return (
     <div className='Container'>

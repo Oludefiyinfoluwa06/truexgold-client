@@ -1,4 +1,3 @@
-import React from 'react';
 import '../assets/styles.css'
 import Logo from '../assets/img/truexLogo.png';
 
